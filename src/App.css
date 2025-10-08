@@ -143,6 +143,97 @@ div:nth-child(3) > p{
   .features { grid-template-columns: 1fr; }
 }
 
+/* Audio Controls */
+.audio-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.audio-track {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.audio-track:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.audio-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  flex: 1;
+}
+
+.audio-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.audio-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.audio-buttons button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.audio-buttons button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.audio-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .audio-controls {
+    max-width: 100%;
+  }
+
+  .audio-track {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .audio-label {
+    text-align: center;
+  }
+
+  .audio-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .audio-buttons button {
+    flex: 1;
+    min-width: 70px;
+  }
+}
+
 /* Hide ElevenLabs branding */
 elevenlabs-convai::part(branding),
 elevenlabs-convai [class*="branding"],
